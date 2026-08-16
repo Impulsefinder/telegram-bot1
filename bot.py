@@ -7,9 +7,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # ==================== تنظیمات ====================
-BOT_TOKEN = "8966196250:AAHcuEZY4DJ0kymLKotGNlzv0y8x5cCW1Jw"  # توکن ربات
-CHANNEL_ID = "@khaneyeroyaeeantalya"  # آیدی کانال
-ADMIN_ID = 132101989  # آیدی عددی ادمین
+import os
+
+BOT_TOKEN = os.environ.get('BOT_TOKEN', '8966196250:AAHcuEZY4DJ0kymLKotGNlzv0y8x5cCW1Jw')
+CHANNEL_ID = os.environ.get('CHANNEL_ID', '@khaneyeroyaeeantalya')
+ADMIN_ID = int(os.environ.get('ADMIN_ID', '132101989'))آیدی عددی ادمین
 
 # ==================== دیتابیس موقت ====================
 user_states = {}
